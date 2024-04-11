@@ -1,0 +1,16 @@
+{
+    "EMAIL_ALREADY_IN_USE": "L'e-mail est déjà utilisé",
+    "EMAIL_NOT_FOUND": "L'e-mail introuvable",
+    "TOKEN_NOT_FOUND": "Utilisateur avec jeton introuvable",
+    "COUNTRY_NOT_FOUND": "Pays introuvable",
+    "COUNTRY_CERTIFIABLE_NOT_FOUND": "Code certifié introuvable",
+    "COMPANY_TYPE_NOT_FOUND": "Type de société introuvable",
+    "EMAIL_NOT_VALIDATED": "Email non validé",
+    "CERTIFICATE_NOT_FOUND": "Certificat introuvable",
+    "BUYER_NOT_FOUND": "Acheteur introuvable",
+    "SELLER_NOT_FOUND": "Vendeur introuvable",
+    "INSPECTION_PLACE_NOT_FOUND": "Lieu d'inspection introuvable",
+    "KEY_NOT_FOUND": "Clé introuvable",
+    "USER_IS_NOT_ADMIN": "L'utilisateur n'est pas ADMIN",
+    "EMAIL_AND_OR_PASSWORD_INCORRECT": "L'utilisateur et/ou le mot de passe sont incorrects"
+}

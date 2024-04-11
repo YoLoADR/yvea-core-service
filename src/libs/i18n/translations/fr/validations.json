@@ -1,0 +1,17 @@
+{
+    "IS_INT": "{property} doit être un nombre entier",
+    "MIN": "{property} ne doit pas être inférieur à {constraint.0}",
+    "MAX": "{property} ne doit pas être supérieur à {constraint.0}",
+    "IS_ARRAY": "{property} doit être un tableau",
+    "IS_EMAIL": "{property} doit être une adresse e-mail",
+    "IS_STRONG_PASSWORD": "{property} n'est pas assez fort",
+    "IS_NOT_EMPTY": "{property} ne doit pas être vide",
+    "VALIDATE_NESTED": "la propriété imbriquée {property} doit être soit un objet soit un tableau",
+    "IS_PHONE_NUMBER": "{property} doit être un numéro de téléphone valide",
+    "IS_BOOLEAN": "{property} doit être une valeur booléenne",
+    "IS_DATE_STRING": "{property} doit être une chaîne de date ISO 8601 valide",
+    "MAX_LENGTH": "{property} doit être plus court ou égal à {constraint.0} caractères",
+    "IS_BASE64": "{property} doit être encodé en base64",
+    "IS_NUMBER": "{property} doit être un nombre",
+    "IS_STRING": "{property} doit être une chaîne de caractères"
+}

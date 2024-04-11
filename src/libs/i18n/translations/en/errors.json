@@ -1,0 +1,16 @@
+{
+    "EMAIL_ALREADY_IN_USE": "Email is already in use",
+    "EMAIL_NOT_FOUND": "Email not found",
+    "TOKEN_NOT_FOUND": "User with token not found",
+    "COUNTRY_NOT_FOUND": "Country not found",
+    "COUNTRY_CERTIFIABLE_NOT_FOUND": "Certifiable code not found",
+    "COMPANY_TYPE_NOT_FOUND": "Company type not found",
+    "EMAIL_NOT_VALIDATED": "Email not validated",
+    "CERTIFICATE_NOT_FOUND": "Certificate not found",
+    "BUYER_NOT_FOUND": "Buyer not found",
+    "SELLER_NOT_FOUND": "Seller not found",
+    "INSPECTION_PLACE_NOT_FOUND": "Inspection place not found",
+    "KEY_NOT_FOUND": "Key not found",
+    "USER_IS_NOT_ADMIN": "User is not ADMIN",
+    "EMAIL_AND_OR_PASSWORD_INCORRECT": "User and/or password are incorrect"
+}
