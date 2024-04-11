@@ -1,0 +1,22 @@
+{
+  "name": "yvea-api",
+  "version": "1.0.0",
+  "description": "This document provides a detailed explanation of the structure and key components of our Nest.js backend application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoLoADR/yvea-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YoLoADR/yvea-api/issues"
+  },
+  "homepage": "https://github.com/YoLoADR/yvea-api#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
