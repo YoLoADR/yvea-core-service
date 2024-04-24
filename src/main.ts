@@ -45,6 +45,6 @@ async function bootstrap() {
 
   createPartnersCategories(app.get(CategoriesService));
 
-  await app.listen(process.env.PORT || 3011);
+  await app.listen(process.env.PORT || 8000);
 }
 bootstrap();
