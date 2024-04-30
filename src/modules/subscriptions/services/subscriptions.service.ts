@@ -29,8 +29,21 @@ export class SubscriptionsService {
     subscription.userId = dto.userId;
     subscription.pluginId = dto.pluginId;
     subscription.startDate = new Date(); // Utilisez la date actuelle pour le début de l'abonnement
-    subscription.trialEndDate = new Date(Date.now() + 48 * 60 * 60 * 1000); // Ajoutez 48 heures pour la fin de la période d'essai
-    subscription.status = 'TRIAL'; // Le statut est défini sur 'TRIAL' par défaut
+    // subscription.status = 'TRIAL'; // Le statut est défini sur 'TRIAL' par défaut
+    subscription.status = dto.status;
+    if(dto.status === 'TRIAL'){
+      subscription.trialEndDate = new Date(Date.now() + 48 * 60 * 60 * 1000); // Ajoutez 48 heures pour la fin de la période d'essai
+      // mettre un nombre de token pour la période d'essai
+      // trial_token_limit
+    }
+    if(dto.status === 'ACTIVE'){
+      subscription.endDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // Ajoutez 30 jours pour la fin de l'abonnement
+      // Ou un an après la date de début de l'abonnement
+      // subscription.endDate = new Date(subscription.startDate.getTime() + 365 * 24 * 60 * 60 * 1000);
+      // mettre un nombre de token pour l'abonnement
+      // monthly_token_limit
+    }
+
 
     return this.dataSource.manager.save(subscription);
   }

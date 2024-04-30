@@ -1,5 +1,6 @@
 src/constants
 .env
+yvea-core-service.pem
 
 # compiled output
 /dist

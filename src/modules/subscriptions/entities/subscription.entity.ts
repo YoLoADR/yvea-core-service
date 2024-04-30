@@ -31,4 +31,13 @@ export class Subscription {
 
   @Column({ name: 'status', nullable: true })
   status: string;
+
+  @Column({ name: 'trial_token_limit', type: 'int', default: 10 }) // Valeur par défaut pour la limite d'essai
+  trialTokenLimit: number;
+
+  @Column({ name: 'monthly_token_limit', type: 'int', default: 100 }) // Valeur par défaut pour la limite mensuelle
+  monthlyTokenLimit: number;
+
+  @Column({ name: 'used_tokens', type: 'int', default: 0 }) // Valeur par défaut pour les jetons utilisés
+  usedTokens: number;
 }
