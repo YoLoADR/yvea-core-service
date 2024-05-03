@@ -11,6 +11,7 @@ import {
   Query,
   Req,
   UseGuards,
+  Post,
 } from '@nestjs/common';
 import {
   ApiCookieAuth,
@@ -74,6 +75,13 @@ export class UsersController {
     const entity = await this.usersService.findOne({ sub });
 
     return new UserDto(entity);
+  }
+
+  @Public()
+  @Post('/find-or-create')
+  async findOrCreateUser(@Body() createUserDto: UpdateUserDto): Promise<UserDto> {
+    const user = await this.usersService.findOrCreateByEmail(createUserDto);
+    return new UserDto(user);
   }
 
   @ApiOperation({

@@ -23,27 +23,27 @@ export class User extends BaseEntity {
   @Column({ unique: true })
   email: string;
 
-  @Column()
-  password: string;
+  @Column({ nullable: true })
+  password?: string;
 
-  @Column({ name: 'first_name' })
-  firstName: string;
+  @Column({ name: 'first_name', nullable: true  })
+  firstName?: string;
 
-  @Column({ name: 'last_name' })
-  lastName: string;
+  @Column({ name: 'last_name', nullable: true  })
+  lastName?: string;
 
   @Column({ nullable: true })
   phone?: string;
 
-  @Column({ default: 'en' })
-  lastLang: string;
+  @Column({ default: 'en', nullable: true  })
+  lastLang?: string;
 
   @ManyToOne(() => UserRole, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'role' })
   role: UserRole;
 
-  @Column({ name: 'role', default: 'CLIENT' })
-  roleId: string;
+  @Column({ name: 'role', default: 'CLIENT', nullable: true  })
+  roleId?: string;
 
   @Column({ name: 'validation_token', nullable: true })
   validationToken?: string;

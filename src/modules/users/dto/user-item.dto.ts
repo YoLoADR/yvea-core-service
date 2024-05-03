@@ -11,16 +11,16 @@ export class UserDto {
   email: string;
 
   @ApiProperty()
-  firstName: string;
+  firstName?: string;
 
   @ApiProperty()
-  lastName: string;
+  lastName?: string;
 
   @ApiPropertyOptional()
   phone?: string;
 
   @ApiProperty()
-  company: CompanyDto;
+  company?: CompanyDto;
 
   @ApiPropertyOptional({ type: [SubscriptionDto] })
   subscriptions?: SubscriptionDto[];

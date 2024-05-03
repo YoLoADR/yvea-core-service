@@ -85,6 +85,23 @@ export class UsersService {
       relations: ['company', 'subscriptions'], // Ajoutez 'subscriptions' ici
     });
   }
+  async findOrCreateByEmail(dto: any): Promise<User> {
+    let user = await this.dataSource.manager.findOne(User, {
+      where: { email: dto.email },
+      relations: ['company', 'subscriptions'],
+    });
+    if (user) {
+      return user;
+    }
+
+    // Crée un nouvel utilisateur si non trouvé, sans gérer de mot de passe
+    const newUserDetails = {
+      ...dto,
+      password: null // Assurez-vous que votre DTO n'exige pas de mot de passe
+    };
+    user = this.dataSource.manager.create(User, newUserDetails);
+    return this.dataSource.manager.save(User, user);
+  }
 
   async findOneBy(user: FindOptionsWhere<User>): Promise<User> {
     return User.findOneBy(user);
