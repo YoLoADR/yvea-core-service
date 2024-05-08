@@ -1,8 +1,12 @@
 # File: .github/workflows/workflow.yml
 name: yvea-server
 
-on: [push]
-
+on: 
+  push: 
+    branches:
+      - main
+    
+ 
 env:
   AZURE_WEBAPP_NAME: yvea-server   # set this to your application's name
   NODE_VERSION: '18.x'                # set this to the node version to use
@@ -10,13 +14,14 @@ env:
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest]
     steps:
-    - uses: actions/checkout@main
-    - name: Use Node.js ${{ env.NODE_VERSION }}
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name : Setup Node
       uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
+      with :
+        node-version: 20
     - name: npm install , build, and test
       run: |
         # Build and test the project, then
@@ -24,9 +29,15 @@ jobs:
         npm install --legacy-peer-deps
     - name: Build
       run: npm run build
-    - name: 'Deploy to Azure WebApp'
-      uses: azure/webapps-deploy@v3
-      with: 
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: .
+    - name: Generate deployment package
+      run: zip -r deploy.zip . -x '*.git*'
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v22
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: 'yvea-core-service'
+        environment_name: 'yvea-core-service-env'
+        version_label: ${{ github.sha}}
+        region: eu-west-3
+        deployment_package: deploy.zip
