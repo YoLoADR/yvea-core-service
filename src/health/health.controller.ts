@@ -9,6 +9,10 @@ export class HealthController {
   @HttpCode(HttpStatus.OK)
   @Get()
   check() {
-    // Return OK just to check if server is running
+    // Return OK just to check if server is 
+    return {
+      status: 'UP',
+      timestamp: new Date().toISOString(),
+    };
   }
 }
