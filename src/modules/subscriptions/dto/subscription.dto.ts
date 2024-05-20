@@ -29,6 +29,9 @@ export class SubscriptionDto {
   @ApiProperty()
   usedTokens: number; // Propriété pour le suivi des jetons utilisés
 
+  @ApiProperty()
+  periodStartDate: Date;
+
   constructor(subscription: Subscription) {
     this.id = subscription.id;
     this.startDate = subscription.startDate;
@@ -39,5 +42,6 @@ export class SubscriptionDto {
     this.trialTokenLimit = subscription.trialTokenLimit; // Attribuez la nouvelle propriété
     this.monthlyTokenLimit = subscription.monthlyTokenLimit;
     this.usedTokens = subscription.usedTokens;
+    this.periodStartDate = subscription.periodStartDate;
   }
 }

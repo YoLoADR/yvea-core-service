@@ -62,6 +62,22 @@ export class SubscriptionsService {
       subscription.status = dto.status;
     }
 
+    if (dto.usedTokens) {
+      subscription.usedTokens = dto.usedTokens;
+    }
+
+    if (dto.trialTokenLimit) {
+      subscription.trialTokenLimit = dto.trialTokenLimit;
+    }
+
+    if (dto.monthlyTokenLimit) {
+      subscription.monthlyTokenLimit = dto.monthlyTokenLimit;
+    }
+
+    if (dto.periodStartDate) {
+      subscription.periodStartDate = new Date(dto.periodStartDate);
+    }
+
     return this.dataSource.manager.save(subscription);
   }
 

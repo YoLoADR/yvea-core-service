@@ -40,4 +40,7 @@ export class Subscription {
 
   @Column({ name: 'used_tokens', type: 'int', default: 0 }) // Valeur par défaut pour les jetons utilisés
   usedTokens: number;
+
+  @Column({ name: 'period_start_date', nullable: true })
+  periodStartDate: Date;
 }

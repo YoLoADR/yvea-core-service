@@ -20,4 +20,8 @@ export class UpdateSubscriptionDto {
   @IsOptional()
   @IsNumber()
   readonly usedTokens?: number; // Suivi des jetons utilisés
+
+  @IsOptional()
+  @IsDateString()
+  readonly periodStartDate?: string;
 }

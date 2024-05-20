@@ -79,7 +79,7 @@ export class UsersController {
 
   @Public()
   @Post('/find-or-create')
-  async findOrCreateUser(@Body() createUserDto: UpdateUserDto): Promise<UserDto> {
+  async findOrCreateUser(@Body() createUserDto: any): Promise<UserDto> {
     const user = await this.usersService.findOrCreateByEmail(createUserDto);
     return new UserDto(user);
   }
