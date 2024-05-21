@@ -14,8 +14,8 @@ export class CreateSubscriptionDto {
   readonly status: string;
 
   @IsNumber()
-  readonly trialTokenLimit?: number = 10; // Valeur par défaut pour la limite d'essai
+  readonly trialTokenLimit?: number = 15000; // Valeur par défaut pour la limite d'essai
 
   @IsNumber()
-  readonly monthlyTokenLimit?: number = 100; // Valeur par défaut pour la limite mensuelle
+  readonly monthlyTokenLimit?: number = 35000; // Valeur par défaut pour la limite mensuelle
 }
